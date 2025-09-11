@@ -1,0 +1,102 @@
+/* Clean Drop-down Menu (CSS only, no JS) */
+:root{
+  --bg:#f7f7fb;
+  --ink:#1b1f24;
+  --muted:#667085;
+  --line:#e6e8f0;
+  --surface:#ffffff;
+  --accent:#4f46e5;
+  --radius:12px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(#fff, var(--bg));
+  padding:32px 16px 64px;
+}
+
+h1{
+  margin:0 0 16px;
+  font-size:clamp(22px,3vw,28px);
+  text-align:center;
+  font-weight:800;
+  letter-spacing:.2px;
+  color:#111827;
+}
+
+/* ❗ สำคัญ: จำกัด flex ให้เฉพาะ ul ระดับบนเท่านั้น */
+.main-menu > ul{
+  list-style:none;
+  margin:0 auto;
+  padding:8px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  justify-content:center;
+  max-width:900px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.main-menu > ul > li{ position:relative; }
+
+.main-menu a{
+  display:block;
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:10px;
+  color:#0f172a;
+  font-weight:600;
+}
+.main-menu a:hover{ background:#f6f7fb; }
+
+/* Dropdown */
+.dropdown{ position:relative; }
+.sub-menu{
+  position:absolute;
+  top:calc(100% + 8px);
+  left:0;                 /* ถ้าอยากกึ่งกลางให้เปลี่ยนเป็น left:50%; transform:translateX(-50%); */
+  min-width:220px;
+  list-style:none;
+  margin:0;
+  padding:8px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 16px 40px rgba(0,0,0,.10);
+  display:none;
+  z-index:10;
+}
+.sub-menu li a{
+  padding:9px 10px;
+  border-radius:8px;
+  font-weight:500;
+  white-space:nowrap;     /* กันการตัดบรรทัดชื่อเมนู */
+}
+.sub-menu li a:hover,
+.sub-menu li a:focus{
+  background:#f3f4f8;
+  outline:none;
+}
+
+/* Show on hover & keyboard focus (no JS) */
+.dropdown:hover > .sub-menu,
+.dropdown:focus-within > .sub-menu{
+  display:block;
+}
+
+/* Accessibility focus outline */
+a:focus{ outline:3px solid #b9c1ff; outline-offset:2px; }
+
+/* Content under menu */
+.filler{
+  max-width:900px;
+  margin:16px auto 0;
+  color:var(--muted);
+}

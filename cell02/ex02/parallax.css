@@ -1,0 +1,52 @@
+/* รีเซ็ตเล็กน้อย */
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; font-family: system-ui, Arial, sans-serif; }
+
+/* ส่วนพารัลแลกซ์แต่ละบล็อก */
+.parallax {
+  position: relative;
+  min-height: 100vh;              /* ให้เต็มสูงเท่าหน้าจอ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+
+  /* พารัลแลกซ์แบบพื้นฐาน */
+  background-attachment: fixed;   /* แกนหลักของเอฟเฟกต์ */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* เปลี่ยนรูปตามแต่ละฉาก */
+.bg-1 {
+  /* ใส่ลิงก์รูปของคุณเอง */
+  background-image: url("image1.jpg");
+}
+.bg-2 {
+  background-image: url("image2.jpg");
+}
+
+/* กล่องข้อความบนภาพ */
+.caption {
+  backdrop-filter: blur(2px);
+  padding: 24px 28px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.35);
+}
+.caption h1 { font-size: 48px; line-height: 1.1; margin-bottom: 8px; }
+.caption p  { opacity: 0.9; }
+
+/* บล็อกคั่นพื้นดำ */
+.content-block {
+  background: #000;
+  color: #fff;
+  padding: 64px 20px;
+}
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.content-block h2 { margin-bottom: 12px; }
