@@ -1,48 +1,42 @@
-/* รีเซ็ตเล็กน้อย */
 * { box-sizing: border-box; margin: 0; }
 html, body { height: 100%; font-family: system-ui, Arial, sans-serif; }
 
-/* ส่วนพารัลแลกซ์แต่ละบล็อก */
 .parallax {
   position: relative;
-  min-height: 100vh;              /* ให้เต็มสูงเท่าหน้าจอ */
+  min-height: 100vh;              
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   text-align: center;
 
-  /* พารัลแลกซ์แบบพื้นฐาน */
-  background-attachment: fixed;   /* แกนหลักของเอฟเฟกต์ */
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* เปลี่ยนรูปตามแต่ละฉาก */
-.bg-1 {
-  /* ใส่ลิงก์รูปของคุณเอง */
-  background-image: url("image1.jpg");
-}
-.bg-2 {
-  background-image: url("image2.jpg");
+.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);  
 }
 
-/* กล่องข้อความบนภาพ */
 .caption {
-  backdrop-filter: blur(2px);
+  position: relative;             
   padding: 24px 28px;
-  border-radius: 10px;
+  border-radius: 12px;
   background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(2px);
 }
-.caption h1 { font-size: 48px; line-height: 1.1; margin-bottom: 8px; }
-.caption p  { opacity: 0.9; }
+.caption h1 { font-size: 56px; line-height: 1.1; margin-bottom: 8px; }
 
-/* บล็อกคั่นพื้นดำ */
 .content-block {
   background: #000;
   color: #fff;
   padding: 64px 20px;
+  text-align: center;
 }
 .container {
   max-width: 860px;
@@ -50,3 +44,15 @@ html, body { height: 100%; font-family: system-ui, Arial, sans-serif; }
   line-height: 1.7;
 }
 .content-block h2 { margin-bottom: 12px; }
+
+
+.bg-1 {
+  background-image: url("https://gistda.or.th/ewtadmin//ewt/gistda_web/images/articleimg_2021080415080131851.jpg");
+}
+
+.bg-2 {
+  
+  background-image: url("https://gistda.or.th/ewtadmin//ewt/gistda_web/images/articleimg_2021080415080131851.jpg");
+  background-position: center bottom; 
+}
+
