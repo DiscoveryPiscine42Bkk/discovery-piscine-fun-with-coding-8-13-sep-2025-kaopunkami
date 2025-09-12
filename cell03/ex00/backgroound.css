@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  display: grid;
+  place-items: center;
+  transition: background-color .25s ease;
+}
+
+main{
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+button{
+  font: inherit;
+  padding: .75rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: .75rem;
+  cursor: pointer;
+}
