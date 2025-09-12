@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To do or not to do</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- ถ้าตรวจงานกำหนดให้ส่งเฉพาะ index.html กับ todo.js ให้ย้าย CSS จาก style.css ไปไว้ใน <style> แทน -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>To do or not to do</h1>
+
+    <div class="toolbar">
+      <button id="btn-new" type="button">New</button>
+    </div>
+
+    <!-- กล่องรายการ TODO ตามโจทย์ต้องมี id="ft_list" -->
+    <div id="ft_list" class="list" aria-live="polite"></div>
+  </main>
+
+  <script src="todo.js"></script>
+</body>
+</html>
